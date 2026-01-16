@@ -98,7 +98,7 @@ function App() {
 
   return (
     <div 
-      className="bg-blue-500/40 text-black min-h-screen flex items-center justify-center font-inter relative"
+      className="bg-blue-500/40 text-black min-h-screen p-4 overflow-hidden flex items-center justify-center font-inter relative"
     >
       {
         currentCard &&
@@ -183,22 +183,24 @@ function App() {
           </motion.div>
         </motion.div>
       }
-      <div className='max-w-lg mx-auto flex flex-col gap-10'>
+      <div className='max-w-xl mx-auto flex flex-col gap-10'>
         {
           cards.map((card, idx) => 
             <motion.button 
               layoutId={`card-${card.title}`}
               onClick={ () => setCurrentCard(card) }
               key={card.title}
+              whileHover={{ 
+                y: -8, 
+                x: 8, 
+                boxShadow: "0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12)"
+              }}
+              transition={{ type: "spring", stiffness: 200 }}
               className='
                 p-4 rounded-lg 
                 flex items-center justify-between 
                 gap-10 bg-white/40 
                 shadow-2xl 
-                hover:-translate-y-2
-                hover:translate-x-2
-                hover:shadow-[0_2.8px_2.2px_rgba(0,_0,_0,_0.034),_0_6.7px_5.3px_rgba(0,_0,_0,_0.048),_0_12.5px_10px_rgba(0,_0,_0,_0.06),_0_22.3px_17.9px_rgba(0,_0,_0,_0.072),_0_41.8px_33.4px_rgba(0,_0,_0,_0.086),_0_100px_80px_rgba(0,_0,_0,_0.12)]
-                transition-all duration-300
                 cursor-pointer
               '
             >
