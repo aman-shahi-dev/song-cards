@@ -156,6 +156,7 @@ function App() {
             >
               <Link
                 to={currentCard.ctaLink}
+                target='_blank'
                 className='px-6 py-2 bg-green-500 rounded-full text-xs flex items-center'
                 >
                 {currentCard.ctaText}
