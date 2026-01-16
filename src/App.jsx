@@ -117,6 +117,7 @@ function App() {
         currentCard && 
         <motion.div 
           layoutId={`card-${currentCard.title}`}
+          style={{ willChange: "transform, opacity" }}
           className='
             h-[500px] 
             fixed inset-0 
