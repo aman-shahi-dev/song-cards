@@ -97,7 +97,19 @@ function App() {
   const [currentCard, setCurrentCard] = useState(null)
 
   return (
-    <div 
+    <motion.div 
+      initial={{
+        opacity: 0,
+        filter: 'blur(10px)',
+      }}
+      animate={{
+        opacity: 1,
+        filter: 'blur(0px)',
+      }}
+      transition={{
+        delay: 0.5,
+        duration: 1,
+      }}
       className="bg-blue-500/40 text-black min-h-screen p-4 overflow-hidden flex items-center justify-center font-inter relative"
     >
       {
@@ -237,7 +249,7 @@ function App() {
           )
         }
       </div>
-    </div>
+    </motion.div>
   )
 }
 
